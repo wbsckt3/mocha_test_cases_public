@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+  <title>Count all starts Test</title>
+  <title>Refactorii Test Cases</title>
+  <style>
+    /* Estilos para el editor y la interfaz */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #d9e3d9;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .CodeMirror {
+      width: 100%;
+      height: auto;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #61dafb;
+      color: white;
+      border: none;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #68b2c6;
+    }
+
+    #retryButton {
+      display: none;
+      background-color: #f44336;
+      width: 100%;
+    }
+
+    #retryButton:hover {
+      background-color: #d32f2f;
+    }
+
+    #buttonTest2 {
+      background-color: #4caf509c;
+      color: green;
+      margin-bottom: 3px;
+	  color: #ffffff
+    }
+
+    /* Estilos para el contenedor de resultados de pruebas */
+    #mocha {
+      background-color: #d9e3d9;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilos para la sección de resultados */
+    #testResults {
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 22px;
+      font-family: helvetica;
+    }
+
+    /* Estilos para las estadísticas de las pruebas */
+    #mocha-stats {
+      margin-top: 0px;
+      background-color: #ddd;
+      border-radius: 5px;
+      font-size: 21px;
+      list-style: none;
+    }
+
+    #mocha-stats li {
+      display: inline-block;
+      padding: 8px 16px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #mocha-stats li:last-child {
+      border-bottom: none;
+    }
+
+    #mocha-stats li strong {
+      font-weight: bold;
+    }
+
+    /* Estilos para el li class suite h1 href */
+    a[href] {
+      color: #000000;
+      /* Color del texto del enlace */
+      text-decoration: none;
+      /* Sin subrayado */
+      font-weight: bold;
+      padding: 8px;
+      margin-bottom: 5px;
+      border-radius: 3px;
+      transition: background-color 0.3s;
+      font-size: 22px;
+    }
+
+    a[href]:hover {
+      background-color: #f0f0f0;
+      /* Cambio de color al pasar el mouse */
+      font-size: 22px;
+    }
+
+    /* Eliminar los puntos de inicio para a y h2 */
+    ul#mocha-report li.suite {
+      list-style: none;
+      /* Eliminar el estilo de lista */
+      padding-left: 0;
+      /* Eliminar el padding izquierdo si lo hubiera */
+    }
+
+    h2 {
+      font-size: 17px;
+      margin-top: -15px;
+    }
+
+    #explain {
+      background: #d9e3d9;
+      padding: 10px;
+      font-family: helvetica;
+      font-size: 14px;
+      padding-left: 34px;
+    }
+
+    #console {
+      flex-shrink: 0;
+      background-color: #1e1e1e; /* Cambié el color de fondo de la consola para un mejor contraste */
+      color: white;
+      padding: 10px;
+      overflow-y: auto;
+      height: auto; /* Ajusté la altura para dejar más espacio para el código */
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.63.1/lib/codemirror.css">
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.1/lib/codemirror.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.1/mode/javascript/javascript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/9.1.3/mocha.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.4/chai.js"></script>
+</head>
+
+<body onload="cargaInicialTestCases()">
+
+  <div id="explain"></div>
+  <textarea id="codeEditor" rows="10" cols="50"></textarea>
+  <button id="retryButton" style="display: none;" onclick="retryTests()">Reintentar</button>
+  <button id="buttonTest2" onclick="openTest()" style="display: none;">Bien hecho! puedes continuar con la siguiente
+    prueba ?? </button>
+  <button onclick="runTests()">Run</button>
+  <div id="console"></div> 
+  <div id="mocha"></div>
+  <div id="testResults"></div>
+  
+   <script>
+   
+ const _0x535bf4=_0x3080;(function(_0x4ca859,_0x5528b6){const _0x4c7df4=_0x3080,_0x2ba868=_0x4ca859();while(!![]){try{const _0x4c0251=parseInt(_0x4c7df4(0x103))/0x1*(parseInt(_0x4c7df4(0x10b))/0x2)+parseInt(_0x4c7df4(0x153))/0x3*(-parseInt(_0x4c7df4(0x123))/0x4)+-parseInt(_0x4c7df4(0x150))/0x5*(-parseInt(_0x4c7df4(0x110))/0x6)+-parseInt(_0x4c7df4(0x14c))/0x7+parseInt(_0x4c7df4(0x118))/0x8*(parseInt(_0x4c7df4(0x139))/0x9)+parseInt(_0x4c7df4(0x148))/0xa+-parseInt(_0x4c7df4(0x149))/0xb;if(_0x4c0251===_0x5528b6)break;else _0x2ba868['push'](_0x2ba868['shift']());}catch(_0x56a08f){_0x2ba868['push'](_0x2ba868['shift']());}}}(_0x4ebd,0x4aa46));let currentTestCase,currentTestCaseIndex;const testCases=[{'functionName':_0x535bf4(0x120),'functionExplain':_0x535bf4(0x117),'functionResultExplain':_0x535bf4(0x132),'functionCode':_0x535bf4(0x12b),'tests':[{'description':_0x535bf4(0xf9),'assertions':[()=>{const _0x3b6b58=_0x535bf4,_0x261ae1=[0xa,0x3,0x2,0x1,0x6,0x1,0x9,0x2];assert[_0x3b6b58(0x12d)](testedFunction(_0x261ae1),0x22);}],'functionDataTest':{'array':[0xa,0x3,0x2,0x1,0x6,0x1,0x9,0x2],'expectedResult':0x22,'expectedResult2':0x22}}]},{'functionName':'linearSearch','functionExplain':'2.\x20Búsqueda\x20lineal:\x20Ajusta\x20la\x20función\x20(hay\x20un\x20error\x20implicito)\x20para\x20buscar\x20un\x20elemento\x20x\x20en\x20un\x20array\x20con\x20n\x20elementos,\x20la\x20función\x20debe\x20devolver\x20el\x20indice\x20del\x20elemento\x20(es\x20decir\x20la\x20posición\x20del\x20elemento\x20en\x20el\x20array)\x20si\x20dicho\x20elemento\x20está\x20en\x20el\x20array','functionResultExplain':_0x535bf4(0x151),'functionCode':_0x535bf4(0x13f),'tests':[{'description':_0x535bf4(0x145),'assertions':[()=>{const _0x2cb747=_0x535bf4,_0x47bdc1=[0x2,0x3,0x5,0x7,0xb,0xd,0x11];assert[_0x2cb747(0x12d)](testedFunction(_0x47bdc1,0x1),null),assert[_0x2cb747(0x12d)](testedFunction(_0x47bdc1,0x7),0x3),assert['equal'](testedFunction(_0x47bdc1,0x13),null);}],'functionDataTest':{'array':[0x2,0x3,0x5,0x7,0xb,0xd,0x11],'expectedResult':null}}]},{'functionName':_0x535bf4(0x13e),'functionExplain':_0x535bf4(0x108),'functionResultExplain':_0x535bf4(0x129),'functionCode':_0x535bf4(0x10e),'tests':[{'description':_0x535bf4(0x138),'assertions':[()=>{const _0x87097f=_0x535bf4,_0x4f374=[0x4,0x1,0x5,0x3,0x2];assert[_0x87097f(0x142)](testedFunction(_0x4f374),[0x1,0x2,0x3,0x4,0x5]);}]}]},{'functionName':_0x535bf4(0x147),'functionExplain':_0x535bf4(0x111),'functionResultExplain':_0x535bf4(0x15d),'functionCode':_0x535bf4(0x15f),'tests':[{'description':'Debería\x20ordenar\x20correctamente\x20el\x20array\x20utilizando\x20Quick\x20Sort','assertions':[()=>{const _0x83f16f=_0x535bf4,_0x3968aa=[0x4,0x1,0x5,0x3,0x2],_0x38ad3a=testedFunction(_0x3968aa);assert[_0x83f16f(0x142)](_0x38ad3a,[0x1,0x2,0x3,0x4,0x5]);}]},{'description':_0x535bf4(0x101),'assertions':[()=>{const _0x2e6380=_0x535bf4,_0x302bb5=[],_0xeba0a9=testedFunction(_0x302bb5);assert[_0x2e6380(0x142)](_0xeba0a9,[]);}]}]},{'functionName':'Array\x20Operations','functionExplain':_0x535bf4(0x12e),'functionCode':_0x535bf4(0x100),'tests':[{'description':_0x535bf4(0x10f),'assertions':[()=>{const _0x441907=_0x535bf4,_0x34ec15=testedFunction();assert[_0x441907(0x142)](_0x34ec15,[]);}]}]},{'functionName':_0x535bf4(0x115),'functionExplain':_0x535bf4(0x11f),'functionCode':_0x535bf4(0x125),'tests':[{'description':_0x535bf4(0x109),'assertions':[()=>{const _0x2d92ee=_0x535bf4,_0x171df7=[],{numbers1:_0x58fc1e,numbers2:_0x313459,numbers3:_0x214469}=testedFunction(_0x171df7);assert[_0x2d92ee(0x142)](_0x58fc1e,[0x64,0x2,0x3,0x4,0x5]),assert[_0x2d92ee(0x142)](_0x313459,[0x1,0x2,0x3,0x4,0x5]),assert[_0x2d92ee(0x142)](_0x214469,[0x1,0x2,0x3,0x4,0x5]);}]}]},{'functionName':_0x535bf4(0x158),'functionExplain':_0x535bf4(0x127),'functionCode':'function\x20testedFunction(numbers1,\x20numbers2)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20let\x20allNumbers1\x20=\x20numbers1.concat(numbers2);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20let\x20allNumbers2\x20=\x20[...numbers1,\x20...numbers2];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20return\x20{\x20allNumbers1,\x20allNumbers2\x20};\x0a\x20\x20\x20\x20\x20\x20\x20\x20}','tests':[{'description':_0x535bf4(0x146),'assertions':[()=>{const _0x2ee1b1=_0x535bf4,_0x24aee8=[0x2,0x3,0x5],_0x47773a=[0x7,0xb,0xd],_0x1b941f=testedFunction(_0x24aee8,_0x47773a);assert[_0x2ee1b1(0x142)](_0x1b941f[_0x2ee1b1(0x10c)],[0x2,0x3,0x5,0x7,0xb,0xd]);}]},{'description':_0x535bf4(0x141),'assertions':[()=>{const _0x23990a=_0x535bf4,_0x2e5f48=[0x2,0x3,0x5],_0x378055=[0x7,0xb,0xd],_0x1bfd00=testedFunction(_0x2e5f48,_0x378055);assert[_0x23990a(0x142)](_0x1bfd00[_0x23990a(0xf8)],[0x2,0x3,0x5,0x7,0xb,0xd]);}]}]},{'functionName':_0x535bf4(0x128),'functionExplain':_0x535bf4(0x144),'functionCode':_0x535bf4(0x15c),'tests':[{'description':_0x535bf4(0x102),'assertions':[()=>{const _0x5ab729=_0x535bf4,_0x32e7ee=[0x1,0x2,0x3],_0x1e68e9=[0x1,0x2,0x3],_0x245607=testedFunction(_0x32e7ee,_0x1e68e9);assert[_0x5ab729(0x12d)](_0x245607['equal1'],!![]);}]},{'description':_0x535bf4(0x14f),'assertions':[()=>{const _0x331dba=_0x535bf4,_0x579c23=[0x1,0x2,0x3],_0x56bdce=[0x3,0x2,0x1],_0x54ce5f=testedFunction(_0x579c23,_0x56bdce);assert[_0x331dba(0x12d)](_0x54ce5f[_0x331dba(0x122)],![]);}]}]}];function _0x4ebd(){const _0x3b5f56=['rgb(244,\x20207,\x2094)','setItem','innerText','javascript','allNumbers2','Debería\x20sumar\x20correctamente\x20el\x20total\x20de\x20elementos','getItem','console','backgroundColor','Excelente!\x20🎉\x20haz\x20encontrado\x20los\x20tres\x20errores\x20en\x20la\x20función!\x20continúa\x20con\x20la\x20siguiente\x20prueba','functionResultExplain','originalLog','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20function\x20testedFunction()\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20let\x20primeNumbers\x20=\x20[2,\x205,\x207];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20primeNumbers.push(11);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20primeNumbers.splice(0,\x200,\x203);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20delete\x20primeNumbers[2];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20primeNumbers.splice(2,\x201);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20primeNumbers.push(13,\x2017);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20primeNumbers.splice(0,\x202,\x202,\x203,\x205);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20primeNumbers\x20=\x20[];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20return\x20primeNumbers;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20','Debería\x20manejar\x20un\x20array\x20vacío','Debería\x20verificar\x20correctamente\x20la\x20igualdad\x20de\x20dos\x20arrays\x20(método\x20join)','4883KxmVCY','log','fromTextArea','buttonTest2','resultados','3.\x20Ajusta\x20la\x20función\x20para\x20ordenar\x20de\x20forma\x20ascendente\x20el\x20array\x20y\x20reeemplaza\x20********\x20por\x20la\x20instrucción\x20necesaria\x20para\x20lograrlo','Debería\x20verificar\x20la\x20copia\x20correcta\x20del\x20array','run','210qBpFcj','allNumbers1','currentTestCaseIndex','function\x20testedFunction(array){\x0a\x20\x20\x20\x20\x20\x20\x20\x20var\x20items\x20=\x20array.slice();\x0a\x20\x20\x20\x20\x20\x20\x20\x20for\x20(var\x20i\x20=\x200;\x20i\x20<\x20items.length;\x20i++)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20for\x20(var\x20j\x20=\x20i\x20+\x201;\x20j\x20<\x20items.length;\x20j++)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(items[j]\x20>\x20items[i])\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20tmp\x20=\x20items[j];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20items[j]\x20=\x20items[i];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20********\x20=\x20tmp;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20return\x20items;\x0a\x20\x20\x20\x20\x20\x20}','Debería\x20manejar\x20las\x20operaciones\x20de\x20añadir,\x20borrar\x20y\x20modificar\x20correctamente\x20el\x20array','8016AIfjGB','4.\x20Ordena\x20el\x20array\x20de\x20forma\x20ascendente\x20con\x20Quick\x20Sort\x20resolviendo\x20los\x20dos\x20errores\x20que\x20se\x20encuentran\x20en\x20la\x20función','codeEditor','functionName','length','ArrayCopying','style','1.\x20Encuentra\x20los\x20errores\x20y\x20ajusta\x20la\x20función\x20para\x20sumar\x20el\x20total\x20de\x20elementos\x20de\x20un\x20array\x20con\x20n\x20elementos','66512xATyyL','stringify','getElementById','end','none','innerHTML','setup','6.\x20Copia\x20de\x20arrays\x20(usando\x20Spread\x20Operator)','countAllStars','retryButton','equal2','37676myVOcW','#4CAF50','function\x20testedFunction(array)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20let\x20numbers1\x20=\x20[\x201,\x202,\x203,\x204,\x205\x20];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20let\x20numbers2\x20=\x20numbers1.slice();\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20let\x20numbers3\x20=\x20[...numbers1];\x20//\x20ECMA\x20Script\x206\x20feature\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20numbers1[0]\x20=\x20100;\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20return\x20{\x20numbers1,\x20numbers2,\x20numbers3\x20};\x0a\x20\x20\x20\x20\x20\x20\x20\x20}','querySelector','7.\x20Combina\x20dos\x20arrays\x20en\x20uno\x20solo.','ArrayEquality','Ok,\x20lo\x20lograste\x20??,\x20la\x20función\x20devuelve\x20el\x20array\x20ordenado\x20de\x20forma\x20ascendente,\x20continúa...','functionExplain','function\x20testedFunction(array)\x20{\x0a\x09\x09\x09\x09var\x20totalElements\x20=\x200;\x0a\x09\x09\x09\x09for\x20(let\x20i\x20=\x200;\x20i\x20<\x20n;\x20i++)\x20{\x0a\x09\x09\x09\x09\x09totalElements\x20=\x20array[0];\x0a\x09\x09\x09\x09}\x0a\x09\x09\x09\x09return\x20totalElements;\x0a\x09\x09\x09}','keys','equal','5.\x20Pruebas\x20de\x20operaciones\x20con\x20Arrays','display','forEach','appendChild','Bien\x20hecho!\x20🎉\x20puede\x20seguir\x20adelante','assert','functionDataTest','button[onclick=\x22runTests()\x22]','expectedResult','textContent','Debería\x20devolver\x20el\x20array\x20ordenado','387HfnkSg','La\x20prueba\x20ha\x20fallado:\x20','functionCode','value','parse','bubbleSort','function\x20testedFunction(array,\x20x){\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20i\x20=\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20count\x20=\x20array.length;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20while\x20(i\x20<\x20count)\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(array[i]\x20==\x20x)\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20return\x20x;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20i++;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20return\x20null;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}','array','Debería\x20combinar\x20dos\x20arrays\x20correctamente\x20(usando\x20ECMAScript\x206\x20spread)','deepEqual','Error\x20al\x20ejecutar\x20las\x20pruebas:\x20','8.\x20Verifica\x20la\x20igualdad\x20entre\x20dos\x20arrays.','Debería\x20devolver\x20el\x20indice\x20si\x20el\x20elemento\x20está\x20presente\x20en\x20el\x20array','Debería\x20combinar\x20dos\x20arrays\x20correctamente\x20(usando\x20concat)','SortArray','5044110hiURSk','4886805LOHYSs','div','\x0a\x09\x09\x09\x09window.testedFunction\x20=\x20','3894555sQPMab','setValue','getValue','Debería\x20verificar\x20correctamente\x20la\x20igualdad\x20de\x20dos\x20arrays\x20(función\x20arraysEqual)','520nBnxhq','Excelente!\x20??\x20continúa\x20con\x20la\x20siguiente\x20prueba','Prueba\x20para\x20','66wkQAmi','tests','passes','\x0a\x09\x09\x09','Pista:\x20en\x20la\x20función\x20hay\x203\x20errores','mergeArrays','explain','failures','description','function\x20testedFunction(n1,\x20n2)\x20{\x0a\x20\x20function\x20arraysEqual(a,\x20b)\x20{\x0a\x20\x20\x20\x20if\x20(a\x20===\x20b)\x20return\x20true;\x0a\x20\x20\x20\x20if\x20(a\x20==\x20null\x20||\x20b\x20==\x20null)\x20return\x20false;\x0a\x20\x20\x20\x20if\x20(a.length\x20!==\x20b.length)\x20return\x20false;\x0a\x0a\x20\x20\x20\x20for\x20(let\x20i\x20=\x200;\x20i\x20<\x20a.length;\x20i++)\x20{\x0a\x20\x20\x20\x20\x20\x20if\x20(a[i]\x20!==\x20b[i])\x20return\x20false;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20return\x20true;\x0a\x20\x20}\x0a\x0a\x20\x20let\x20equal1\x20=\x20n1.join()\x20===\x20n2.join();\x0a\x20\x20let\x20equal2\x20=\x20arraysEqual(n1,\x20n2);\x0a\x0a\x20\x20return\x20{\x20equal1,\x20equal2\x20};\x0a}','Bien!\x20????,\x20la\x20función\x20devuelve\x20el\x20array\x20ordenado\x20de\x20forma\x20ascendente,\x20continúa...','testResults','function\x20testedFunction(array)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20function\x20doSort(items,\x20fst,\x20lst)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(fst\x20<=\x20lst)\x20return;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20i\x20=\x20fst;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20j\x20=\x20lst;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20x\x20=\x20items[Math.splice((fst\x20+\x20lst)\x20/\x202)];\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20while\x20(i\x20<=\x20j)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20while\x20(items[i]\x20<\x20x)\x20i++;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20while\x20(items[j]\x20>\x20x)\x20j--;\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(i\x20<=\x20j)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20tmp\x20=\x20items[i];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20items[i]\x20=\x20items[j];\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20items[j]\x20=\x20tmp;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20i++;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20j--;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20doSort(items,\x20fst,\x20j);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20doSort(items,\x20i,\x20lst);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20items\x20=\x20array.slice();\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20doSort(items,\x200,\x20items.length\x20-\x201);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20return\x20items;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}','reload','assertions','mocha-stats'];_0x4ebd=function(){return _0x3b5f56;};return _0x4ebd();}function _0x3080(_0x2042fc,_0xfadd2b){const _0x4ebd3e=_0x4ebd();return _0x3080=function(_0x3080e1,_0x49b611){_0x3080e1=_0x3080e1-0xf4;let _0x31c364=_0x4ebd3e[_0x3080e1];return _0x31c364;},_0x3080(_0x2042fc,_0xfadd2b);}var codeEditor=CodeMirror[_0x535bf4(0x105)](document['getElementById'](_0x535bf4(0x112)),{'lineNumbers':!![],'mode':_0x535bf4(0xf7)});function cargaInicialTestCases(){const _0x214468=_0x535bf4;if(testCases[_0x214468(0x114)]>0x0){currentTestCaseIndex=localStorage['getItem'](_0x214468(0x10d));currentTestCaseIndex===null&&(currentTestCaseIndex=0x0,localStorage[_0x214468(0xf5)]('currentTestCaseIndex',currentTestCaseIndex));const _0x1bd9a2=document[_0x214468(0x11a)](_0x214468(0x159));codeEditor[_0x214468(0x14d)](testCases[currentTestCaseIndex][_0x214468(0x13b)]),_0x1bd9a2[_0x214468(0x137)]=testCases[currentTestCaseIndex][_0x214468(0x12a)];}}const assert=chai[_0x535bf4(0x133)];mocha[_0x535bf4(0x11e)]('bdd');function openTest(){const _0x56bda6=_0x535bf4;location[_0x56bda6(0x160)](),currentTestCaseIndex=localStorage[_0x56bda6(0xfa)](_0x56bda6(0x10d));const _0x2fecc4=document[_0x56bda6(0x11a)]('codeEditor'),_0xc072c4=document[_0x56bda6(0x11a)](_0x56bda6(0x159));_0x2fecc4[_0x56bda6(0x13c)]=testCases[currentTestCaseIndex][_0x56bda6(0x13b)],_0xc072c4[_0x56bda6(0x137)]=testCases[currentTestCaseIndex]['functionExplain'];const _0x30fa18=document['getElementById'](_0x56bda6(0x121));_0x30fa18[_0x56bda6(0x116)][_0x56bda6(0x12f)]=_0x56bda6(0x11c);const _0x754e84=document[_0x56bda6(0x126)](_0x56bda6(0x135));_0x754e84[_0x56bda6(0x116)]['display']='block';const _0x806730=document[_0x56bda6(0x11a)](_0x56bda6(0x106));_0x806730[_0x56bda6(0x116)][_0x56bda6(0x12f)]=_0x56bda6(0x11c);}function runTests(){const _0x43bd3e=_0x535bf4;currentTestCaseIndex=localStorage[_0x43bd3e(0xfa)](_0x43bd3e(0x10d));const _0x5c26b4=testCases[currentTestCaseIndex];console['log'](_0x5c26b4);const _0x140477=codeEditor[_0x43bd3e(0x14e)](),_0x5bcb2f=_0x5c26b4[_0x43bd3e(0x113)];console[_0x43bd3e(0x104)](_0x5bcb2f);let _0x302126;document[_0x43bd3e(0x11a)](_0x43bd3e(0xfb))['innerHTML']='',console[_0x43bd3e(0x104)]=function(_0xfd5ebb){const _0x52a70c=_0x43bd3e;var _0x175de3=document['createElement'](_0x52a70c(0x14a));_0x175de3[_0x52a70c(0x11d)]=_0xfd5ebb,document[_0x52a70c(0x11a)](_0x52a70c(0xfb))[_0x52a70c(0x131)](_0x175de3);},console[_0x43bd3e(0xff)]=console[_0x43bd3e(0x104)];try{;eval(_0x43bd3e(0x14b)+_0x140477+_0x43bd3e(0x156)),describe(_0x43bd3e(0x152)+_0x5c26b4[_0x43bd3e(0x113)],function(){const _0x22d0c1=_0x43bd3e;_0x5c26b4[_0x22d0c1(0x154)]['forEach'](_0x5667f4=>{const _0x1aecff=_0x22d0c1;it(_0x5667f4[_0x1aecff(0x15b)],function(){const _0x5ba747=_0x1aecff;try{const _0x5d39fd=window['testedFunction'];_0x5667f4[_0x5ba747(0x161)][_0x5ba747(0x130)](_0xab5ca1=>{_0xab5ca1(_0x5d39fd);});}catch(_0xda36c2){throw new Error(_0x5ba747(0x13a)+_0xda36c2['message']);}});});});const _0x14899f=mocha[_0x43bd3e(0x10a)]();_0x14899f['on'](_0x43bd3e(0x11b),function(){const _0x3850ac=_0x43bd3e,_0x20776e=_0x14899f['stats'],_0xeaa51f=_0x20776e[_0x3850ac(0x155)],_0x8a1c79=_0x20776e[_0x3850ac(0x15a)];if(_0x8a1c79===0x0){console['log'](_0x3850ac(0xfd));const _0x1a02d0=document[_0x3850ac(0x11a)](_0x3850ac(0x162));_0x1a02d0['style']['backgroundColor']=_0x3850ac(0x124);let _0x27326d=JSON[_0x3850ac(0x13d)](localStorage[_0x3850ac(0xfa)](_0x3850ac(0x107)));!_0x27326d||Object[_0x3850ac(0x12c)](_0x27326d)['length']===0x0?_0x27326d={[_0x5bcb2f]:'ok'}:_0x27326d[_0x5bcb2f]='ok';localStorage['setItem'](_0x3850ac(0x107),JSON[_0x3850ac(0x119)](_0x27326d)),currentTestCaseIndex++,localStorage[_0x3850ac(0xf5)](_0x3850ac(0x10d),currentTestCaseIndex);const _0x430f80=document[_0x3850ac(0x11a)](_0x3850ac(0x121));_0x430f80[_0x3850ac(0x116)][_0x3850ac(0x12f)]=_0x3850ac(0x11c);const _0x5e5524=document[_0x3850ac(0x126)](_0x3850ac(0x135));_0x5e5524[_0x3850ac(0x116)][_0x3850ac(0x12f)]='none';if(testCases[_0x3850ac(0x114)]>currentTestCaseIndex){const _0x48ca89=document['getElementById'](_0x3850ac(0x106));_0x48ca89['style']['display']='block',_0x48ca89['textContent']=testCases[currentTestCaseIndex-0x1][_0x3850ac(0xfe)];}else alert('pruebas\x20terminadas');}else{console[_0x3850ac(0x104)]('Ejemplo\x20de\x20la\x20ejecución\x20esperada:'),console['log']('Array\x20parametro\x20pasado\x20a\x20la\x20función\x20=\x20['+_0x5c26b4[_0x3850ac(0x154)][0x0][_0x3850ac(0x134)][_0x3850ac(0x140)]+']'),console[_0x3850ac(0x104)]('Se\x20espera\x20que\x20la\x20función\x20retorne\x20\x20=\x20'+_0x5c26b4['tests'][0x0]['functionDataTest'][_0x3850ac(0x136)]),console[_0x3850ac(0x104)](_0x3850ac(0x157));const _0x2e8ae1=document['getElementById'](_0x3850ac(0x162));_0x2e8ae1[_0x3850ac(0x116)][_0x3850ac(0xfc)]=_0x3850ac(0xf4);const _0x37fe67=document[_0x3850ac(0x126)]('button[onclick=\x22runTests()\x22]');_0x37fe67[_0x3850ac(0x116)][_0x3850ac(0x12f)]=_0x3850ac(0x11c);const _0x4974cc=document['getElementById'](_0x3850ac(0x121));_0x4974cc['style'][_0x3850ac(0x12f)]='block';}});}catch(_0x23c82f){const _0x155409=document[_0x43bd3e(0x11a)](_0x43bd3e(0x15e));_0x155409[_0x43bd3e(0xf6)]=_0x43bd3e(0x143)+_0x23c82f;}}function retryTests(){const _0x525654=_0x535bf4;location[_0x525654(0x160)]();}
+
+  </script>
+</body>
+
+</html>
