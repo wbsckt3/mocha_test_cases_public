@@ -1,10 +1,10 @@
-- https://wbsckt3.github.io/mocha_test_cases_public/spreadOperator.html 
+- https://wbsckt3.github.io/mocha_test_cases_public/spreadOperator.html https://i.imgur.com/m2BV9Qr.png
 - https://wbsckt3.github.io/mocha_test_cases_public/arrowFunction.html  https://i.imgur.com/teRh8KJ.png
-- https://wbsckt3.github.io/mocha_test_cases_public/mapFunction.html
-- https://wbsckt3.github.io/mocha_test_cases_public/nativeFunction.html
-- https://wbsckt3.github.io/mocha_test_cases_public/reduceFunction.html
-- https://wbsckt3.github.io/mocha_test_cases_public/calculateFactorial.html
-- https://wbsckt3.github.io/mocha_test_cases_public/customMap.html
-- https://wbsckt3.github.io/mocha_test_cases_public/customMap2.html
-- https://wbsckt3.github.io/mocha_test_cases_public/immutable.html
-- https://wbsckt3.github.io/mocha_test_cases_public/ConvertCelsiusToFahrenheit.html
+- https://wbsckt3.github.io/mocha_test_cases_public/mapFunction.html  https://i.imgur.com/GPDqGhB.png
+- https://wbsckt3.github.io/mocha_test_cases_public/nativeFunction.html  https://i.imgur.com/8hAaMDd.png
+- https://wbsckt3.github.io/mocha_test_cases_public/reduceFunction.html  https://i.imgur.com/r425lmx.png
+- https://wbsckt3.github.io/mocha_test_cases_public/calculateFactorial.html  https://i.imgur.com/CwFJENN.png
+- https://wbsckt3.github.io/mocha_test_cases_public/customMap.html  https://i.imgur.com/anOS3jn.png
+- https://wbsckt3.github.io/mocha_test_cases_public/customMap2.html  https://i.imgur.com/Isq8zA3.png
+- https://wbsckt3.github.io/mocha_test_cases_public/immutable.html  https://i.imgur.com/Qt50hqU.png
+- https://wbsckt3.github.io/mocha_test_cases_public/ConvertCelsiusToFahrenheit.html  https://i.imgur.com/0n3lH4p.png
