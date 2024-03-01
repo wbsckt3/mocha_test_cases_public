@@ -2,7 +2,7 @@
 - https://wbsckt3.github.io/mocha_test_cases_public/arrowFunction.html  https://i.imgur.com/teRh8KJ.png
 - https://wbsckt3.github.io/mocha_test_cases_public/mapFunction.html  https://i.imgur.com/GPDqGhB.png
 - https://wbsckt3.github.io/mocha_test_cases_public/nativeFunction.html  https://i.imgur.com/8hAaMDd.png
-- https://wbsckt3.github.io/mocha_test_cases_public/reduceFunction.html  https://i.imgur.com/r425lmx.png
+- https://wbsckt3.github.io/mocha_test_cases_public/reduceFunction.html  https://i.imgur.com/3DMA8fT.png
 - https://wbsckt3.github.io/mocha_test_cases_public/calculateFactorial.html  https://i.imgur.com/CwFJENN.png
 - https://wbsckt3.github.io/mocha_test_cases_public/customMap.html  https://i.imgur.com/anOS3jn.png
 - https://wbsckt3.github.io/mocha_test_cases_public/customMap2.html  https://i.imgur.com/Isq8zA3.png
