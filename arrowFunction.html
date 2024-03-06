@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
-  <title>Reactorii</title>
+  <title>arrowFunction</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.63.1/lib/codemirror.css">
   <script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.1/lib/codemirror.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/codemirror@5.63.1/mode/javascript/javascript.js"></script>
@@ -11,20 +11,229 @@
   <link rel="stylesheet" href="https://wbsckt3.github.io/mocha_test_cases_styles/styles.css">
 </head>
 <body onload="cargaInicialTestCases()">
-
-  <div id="functionNameTitle"></div>
-  <div id="explain"></div>
-  <textarea id="codeEditor" rows="10" cols="50"></textarea>
-  <button id="retryButton" style="display: none;" onclick="retryTests()">Reintentar</button>
-  <button id="buttonTest2" onclick="openTest()" style="display: none;">Bien hecho! puedes continuar con la siguiente prueba</button>
-  <button onclick="runTests()">Run</button>
-  <div id="console"></div> 
-  <div id="mocha"></div>
-  <div id="testResults"></div>
+<div class="container">
+  <div class="explanation">
+	<div id="functionNameTitle"></div>
+	<div id="explain"></div>
+  </div>	
+  <div class="code-editor">
+	<textarea id="codeEditor" rows="10" cols="50"></textarea>
+	<button id="retryButton" style="display: none;" onclick="retryTests()">Reintentar</button>
+	<button id="buttonTest2" onclick="openTest()" style="display: none;">Bien hecho! puedes continuar con la siguiente prueba</button>
+	<button onclick="runTests()">Run</button>
+	<div id="console"></div> 
+	<div id="mocha"></div>
+	<div id="testResults"></div>
+  </div>
+</div>
   
   <script>
-const _0x3b0b4a=_0x56ec;(function(_0x41d05a,_0x3b0177){const _0x492407=_0x56ec,_0x1f7fd4=_0x41d05a();while(!![]){try{const _0x251a8a=parseInt(_0x492407(0xf2))/0x1*(-parseInt(_0x492407(0x11b))/0x2)+parseInt(_0x492407(0xe3))/0x3*(parseInt(_0x492407(0xf9))/0x4)+-parseInt(_0x492407(0x10d))/0x5*(parseInt(_0x492407(0x123))/0x6)+parseInt(_0x492407(0x117))/0x7*(-parseInt(_0x492407(0xfc))/0x8)+parseInt(_0x492407(0x121))/0x9*(-parseInt(_0x492407(0x116))/0xa)+-parseInt(_0x492407(0x10a))/0xb*(-parseInt(_0x492407(0xe6))/0xc)+parseInt(_0x492407(0x104))/0xd;if(_0x251a8a===_0x3b0177)break;else _0x1f7fd4['push'](_0x1f7fd4['shift']());}catch(_0x390e26){_0x1f7fd4['push'](_0x1f7fd4['shift']());}}}(_0x4da0,0xad154));let currentTestCase,currentTestCaseIndex;const testCases=[{'functionName':'arrowFunction','functionExplain':_0x3b0b4a(0xee),'functionResultExplain':_0x3b0b4a(0xed),'functionCode':'array\x20=>\x20{\x0a\x09\x09\x09\x20\x20if\x20(typeof\x20array\x20===\x20\x27undefined\x27\x20||\x20array\x20===\x20null\x20||\x20array.length\x20===\x200)\x20{\x0a\x09\x09\x09\x09return\x20[];\x0a\x09\x09\x09\x20\x20}\x20else\x20{\x0a\x09\x09\x09\x09return\x20array.map(element\x20=>\x20element\x20?\x20element\x20*\x202\x20:\x20element)\x0a\x09\x09\x09\x20\x20}\x0a\x09\x09\x09}\x0a\x09\x09\x09','tests':[{'description':_0x3b0b4a(0xea),'assertions':[()=>{const _0x2672f8=_0x3b0b4a,_0x2ed26b=[0x1,0x2,0x3,0x4,0x5],_0x5e6654=[0x2,0x4,0x6,0x8,0xa];assert[_0x2672f8(0x101)](testedFunction(_0x2ed26b),_0x5e6654);}]},{'description':_0x3b0b4a(0xeb),'assertions':[()=>{const _0x14d363=_0x3b0b4a,_0x53d236=[],_0x47516c=[];assert[_0x14d363(0x101)](testedFunction(_0x53d236),_0x47516c);}]},{'description':_0x3b0b4a(0xf7),'assertions':[()=>{const _0x29897c=_0x3b0b4a,_0x1fd997=[null,undefined,0x0,![],NaN],_0x593144=[null,undefined,0x0,![],NaN];assert[_0x29897c(0x101)](testedFunction(_0x1fd997),_0x593144);}]}]}];var codeEditor=CodeMirror[_0x3b0b4a(0x107)](document[_0x3b0b4a(0x100)]('codeEditor'),{'lineNumbers':!![],'mode':'javascript'});function cargaInicialTestCases(){const _0x35ad51=_0x3b0b4a;if(testCases[_0x35ad51(0x114)]>0x0){currentTestCaseIndex=localStorage[_0x35ad51(0xe5)](_0x35ad51(0x10f));currentTestCaseIndex===null&&(currentTestCaseIndex=0x0,localStorage[_0x35ad51(0xfe)](_0x35ad51(0x10f),currentTestCaseIndex));const _0x3bf9cd=document[_0x35ad51(0x100)](_0x35ad51(0xe8)),_0xc9bebc=document[_0x35ad51(0x100)](_0x35ad51(0x111));codeEditor[_0x35ad51(0xf4)](testCases[currentTestCaseIndex][_0x35ad51(0x11a)]),_0x3bf9cd[_0x35ad51(0xfd)]=testCases[currentTestCaseIndex][_0x35ad51(0xdf)],functionNameTitle[_0x35ad51(0xfd)]=testCases[currentTestCaseIndex][_0x35ad51(0x108)];}}const assert=chai['assert'];mocha[_0x3b0b4a(0xde)](_0x3b0b4a(0xe0));function _0x4da0(){const _0x368984=['procesando...','length','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20window.testedFunction\x20=\x20','11185850efMlOJ','2317XHQTte','La\x20prueba\x20ha\x20fallado:\x20','console','functionCode','2NHfIxP','div','resultados','appendChild','none','functionResultExplain','9GPaVCq','reload','36LRGuMj','tests','originalLog','retryButton','backgroundColor','value','setup','functionExplain','bdd','Haciendo\x20pruebas...','Prueba\x20para\x20','3ZsJDFJ','parse','getItem','156MbtRse','button[onclick=\x22runTests()\x22]','explain','passes','Debería\x20retornar\x20el\x20doble\x20de\x20cada\x20elemento\x20en\x20el\x20array','Debería\x20retornar\x20un\x20array\x20vacío\x20cuando\x20se\x20pasa\x20un\x20array\x20vacío','failures','Bien\x20hecho!\x20🎉\x20puede\x20seguir\x20adelante','Una\x20función\x20flecha\x20(arrow\x20function)\x0a\x0aes\x20una\x20forma\x20más\x20concisa\x20de\x20escribir\x20una\x20función\x20en\x20JavaScript.\x20Se\x20introdujo\x20en\x20ECMAScript\x206\x20como\x20una\x20manera\x20de\x20simplificar\x20la\x20sintaxis\x20de\x20las\x20funciones\x20y\x20de\x20evitar\x20algunos\x20problemas\x20comunes\x20asociados\x20con\x20las\x20funciones\x20normales.\x20En\x20lugar\x20de\x20usar\x20la\x20palabra\x20clave\x20function,\x20las\x20funciones\x20flecha\x20usan\x20una\x20flecha\x20=>\x20entre\x20los\x20paréntesis\x20de\x20los\x20argumentos\x20y\x20el\x20cuerpo\x20de\x20la\x20función.\x20También\x20tienen\x20una\x20sintaxis\x20más\x20compacta,\x20lo\x20que\x20hace\x20que\x20sea\x20más\x20fácil\x20leer\x20y\x20escribir\x20código.\x20Aquí\x20hay\x20un\x20ejemplo\x20de\x20una\x20función\x20flecha\x20que\x20duplica\x20cada\x20elemento\x20en\x20un\x20array:\x20(vamos\x20a\x20manejar\x20las\x20excepciones\x20false,\x20undefined,\x20null,\x200,\x20false\x20y\x20Nan)','block','stringify','assertions','249906HDzElp','Excelente!\x20🎉\x20haz\x20encontrado\x20los\x20tres\x20errores\x20en\x20la\x20función!\x20continúa\x20con\x20la\x20siguiente\x20prueba','setValue','querySelector','style','Debería\x20manejar\x20correctamente\x20los\x20elementos\x20falsy\x20en\x20el\x20array','buttonTest2','1214256wVHLVE','testResults','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','11864wnSZIA','textContent','setItem','createElement','getElementById','deepEqual','codeEditor','Ejemplo\x20de\x20la\x20ejecución\x20esperada:','36430771AwNBLP','mocha-stats','keys','fromTextArea','functionName','message','35431RjsVnJ','innerText','log','482910bmteHA','display','currentTestCaseIndex','stats','explain2','run'];_0x4da0=function(){return _0x368984;};return _0x4da0();}function openTest(){const _0x4b2d0b=_0x3b0b4a;location['reload'](),currentTestCaseIndex=localStorage['getItem'](_0x4b2d0b(0x10f));const _0x5a333b=document['getElementById'](_0x4b2d0b(0x102)),_0x1fb169=document[_0x4b2d0b(0x100)]('explain');_0x5a333b[_0x4b2d0b(0xdd)]=testCases[currentTestCaseIndex]['functionCode'],_0x1fb169[_0x4b2d0b(0xfd)]=testCases[currentTestCaseIndex][_0x4b2d0b(0xdf)];const _0x37c3f5=document[_0x4b2d0b(0x100)]('retryButton');_0x37c3f5[_0x4b2d0b(0xf6)]['display']=_0x4b2d0b(0x11f);const _0x1729fb=document['querySelector'](_0x4b2d0b(0xe7));_0x1729fb[_0x4b2d0b(0xf6)][_0x4b2d0b(0x10e)]=_0x4b2d0b(0xef);const _0x26cbd5=document[_0x4b2d0b(0x100)](_0x4b2d0b(0xf8));_0x26cbd5[_0x4b2d0b(0xf6)][_0x4b2d0b(0x10e)]=_0x4b2d0b(0x11f);}function _0x56ec(_0x2e7755,_0x312c27){const _0x4da09c=_0x4da0();return _0x56ec=function(_0x56ec2c,_0x2384c1){_0x56ec2c=_0x56ec2c-0xd9;let _0x1effa9=_0x4da09c[_0x56ec2c];return _0x1effa9;},_0x56ec(_0x2e7755,_0x312c27);}function runTests(){const _0x2436e5=_0x3b0b4a;currentTestCaseIndex=localStorage[_0x2436e5(0xe5)](_0x2436e5(0x10f));const _0xb9754d=testCases[currentTestCaseIndex];console['log'](_0xb9754d);const _0x3ba0bb=codeEditor['getValue'](),_0x57f3b1=_0xb9754d['functionName'];console['log'](_0x57f3b1);let _0x1f37f2;document[_0x2436e5(0x100)](_0x2436e5(0x119))['innerHTML']='',console[_0x2436e5(0x10c)]=function(_0x4dda73){const _0x5f2f00=_0x2436e5;var _0x1c449d=document[_0x5f2f00(0xff)](_0x5f2f00(0x11c));_0x1c449d['innerHTML']=_0x4dda73,document['getElementById']('console')[_0x5f2f00(0x11e)](_0x1c449d);},console[_0x2436e5(0xda)]=console[_0x2436e5(0x10c)];try{eval(_0x2436e5(0x115)+_0x3ba0bb+_0x2436e5(0xfb)),console[_0x2436e5(0x10c)](_0x2436e5(0x113)),setTimeout(()=>{const _0x1c860c=_0x2436e5;console['log'](_0x1c860c(0xe1));},0xbb8),setTimeout(()=>{const _0x5042bd=_0x2436e5;describe(_0x5042bd(0xe2)+_0xb9754d[_0x5042bd(0x108)],function(){const _0xb21e74=_0x5042bd;_0xb9754d[_0xb21e74(0xd9)]['forEach'](_0x3384b3=>{it(_0x3384b3['description'],function(){const _0x323310=_0x56ec;try{const _0x452e55=window['testedFunction'];_0x3384b3[_0x323310(0xf1)]['forEach'](_0x5d3e26=>{_0x5d3e26(_0x452e55);});}catch(_0x4e9ded){throw new Error(_0x323310(0x118)+_0x4e9ded[_0x323310(0x109)]);}});});});const _0x311b59=mocha[_0x5042bd(0x112)]();_0x311b59['on']('end',function(){const _0x10bd27=_0x5042bd,_0x13666c=_0x311b59[_0x10bd27(0x110)],_0x1e6338=_0x13666c[_0x10bd27(0xe9)],_0x323feb=_0x13666c[_0x10bd27(0xec)];if(_0x323feb===0x0){console[_0x10bd27(0x10c)](_0x10bd27(0xf3));const _0x5cfd28=document[_0x10bd27(0x100)](_0x10bd27(0x105));_0x5cfd28[_0x10bd27(0xf6)][_0x10bd27(0xdc)]='#4CAF50';let _0x12ece5=JSON[_0x10bd27(0xe4)](localStorage['getItem'](_0x10bd27(0x11d)));!_0x12ece5||Object[_0x10bd27(0x106)](_0x12ece5)['length']===0x0?_0x12ece5={[_0x57f3b1]:'ok'}:_0x12ece5[_0x57f3b1]='ok';localStorage['setItem'](_0x10bd27(0x11d),JSON[_0x10bd27(0xf0)](_0x12ece5)),currentTestCaseIndex++,localStorage[_0x10bd27(0xfe)]('currentTestCaseIndex',currentTestCaseIndex);const _0x54a117=document[_0x10bd27(0x100)]('retryButton');_0x54a117[_0x10bd27(0xf6)][_0x10bd27(0x10e)]=_0x10bd27(0x11f);const _0x317e32=document[_0x10bd27(0xf5)](_0x10bd27(0xe7));_0x317e32['style'][_0x10bd27(0x10e)]=_0x10bd27(0x11f);if(testCases['length']>currentTestCaseIndex){const _0x2b2ee7=document[_0x10bd27(0x100)](_0x10bd27(0xf8));_0x2b2ee7[_0x10bd27(0xf6)][_0x10bd27(0x10e)]='block',_0x2b2ee7[_0x10bd27(0xfd)]=testCases[currentTestCaseIndex-0x1][_0x10bd27(0x120)];}else alert('pruebas\x20terminadas');}else{console[_0x10bd27(0x10c)](_0x10bd27(0x103)),console[_0x10bd27(0x10c)]('Pista:\x20en\x20la\x20función\x20hay\x203\x20errores');const _0x36f57f=document[_0x10bd27(0x100)]('mocha-stats');_0x36f57f[_0x10bd27(0xf6)][_0x10bd27(0xdc)]='rgb(244,\x20207,\x2094)';const _0x29ef97=document[_0x10bd27(0xf5)](_0x10bd27(0xe7));_0x29ef97['style'][_0x10bd27(0x10e)]=_0x10bd27(0x11f);const _0x4a5703=document[_0x10bd27(0x100)](_0x10bd27(0xdb));_0x4a5703[_0x10bd27(0xf6)][_0x10bd27(0x10e)]=_0x10bd27(0xef);}});},0x1388);}catch(_0x4e6031){const _0x14bd1b=document[_0x2436e5(0x100)](_0x2436e5(0xfa));_0x14bd1b[_0x2436e5(0x10b)]='Error\x20al\x20ejecutar\x20las\x20pruebas:\x20'+_0x4e6031;}}function retryTests(){const _0x500939=_0x3b0b4a;location[_0x500939(0x122)]();}	
+   
+    let currentTestCase; // define ambito global de la variable, hacia arriba y hacia abajo
+    let currentTestCaseIndex;
+    const testCases = [
+		{
+			functionName: 'arrowFunction',
+			functionExplain: 'Una función flecha (arrow function)\n\nes una forma más concisa de escribir una función en JavaScript. Se introdujo en ECMAScript 6 como una manera de simplificar la sintaxis de las funciones y de evitar algunos problemas comunes asociados con las funciones normales. En lugar de usar la palabra clave function, las funciones flecha usan una flecha => entre los paréntesis de los argumentos y el cuerpo de la función. También tienen una sintaxis más compacta, lo que hace que sea más fácil leer y escribir código. Aquí hay un ejemplo de una función flecha que duplica cada elemento en un array: (vamos a manejar las excepciones false, undefined, null, 0, false y Nan)',
+			functionResultExplain: 'Bien hecho! 🎉 puede seguir adelante',
+			functionCode: `array => {
+			  if (typeof array === 'undefined' || array === null || array.length === 0) {
+				return [];
+			  } else {
+				return array.map(element => element ? element * 2 : element)
+			  }
+			}
+			`,
+			tests: [
+				{	description: 'Debería retornar el doble de cada elemento en el array',
+				assertions: [() => {
+				  const input = [1, 2, 3, 4, 5];
+				  const expectedResult = [2, 4, 6, 8, 10];
+				  assert.deepEqual(testedFunction(input), expectedResult);
+				}]
+			  },
+			  {
+				description: 'Debería retornar un array vacío cuando se pasa un array vacío',
+				assertions: [() => {
+				  const input = [];
+				  const expectedResult = [];
+				  assert.deepEqual(testedFunction(input), expectedResult);
+				}]
+			  },
+			  {
+				description: 'Debería manejar correctamente los elementos falsy en el array',
+				assertions: [() => {
+				  const input = [null, undefined, 0, false, NaN];
+				  const expectedResult = [null, undefined, 0, false, NaN];
+				  assert.deepEqual(testedFunction(input), expectedResult);
+				}]
+			  }
+			]
+		}
+
+      // Agrega más casos de prueba aquí si es necesario
+    ];
+
+     var codeEditor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+          lineNumbers: true,
+          mode: 'javascript'
+        });
+
+    function cargaInicialTestCases() {
+      // Cargar la primera funci¨®n testCase en el CodeMirror al cargar la página
+      if (testCases.length > 0) {
+        // Obtener el valor de currentTestCaseIndex desde localStorage al cargar la página
+        currentTestCaseIndex = localStorage.getItem('currentTestCaseIndex');
+        // Si no hay un valor previo en localStorage, inicializarlo en 0
+        if (currentTestCaseIndex === null) {
+          currentTestCaseIndex = 0;
+          localStorage.setItem('currentTestCaseIndex', currentTestCaseIndex);
+        }
+        const explain = document.getElementById('explain');
+		const explain2 = document.getElementById('explain2');
+        codeEditor.setValue(testCases[currentTestCaseIndex].functionCode);
+        explain.textContent = testCases[currentTestCaseIndex].functionExplain;
+		functionNameTitle.textContent = testCases[currentTestCaseIndex].functionName;
+      }
+    }
+   
+    const assert = chai.assert; 
+	mocha.setup('bdd');
+
+    function openTest() {
+      location.reload();
+      currentTestCaseIndex = localStorage.getItem("currentTestCaseIndex");
+      const codeEditor = document.getElementById('codeEditor');
+      const explain = document.getElementById('explain');
+      codeEditor.value = testCases[currentTestCaseIndex].functionCode;
+      explain.textContent = testCases[currentTestCaseIndex].functionExplain;
+      const retryButton = document.getElementById('retryButton');
+      retryButton.style.display = 'none';
+      const runTestsButton = document.querySelector('button[onclick="runTests()"]');
+      runTestsButton.style.display = 'block';
+      const buttonTest2 = document.getElementById('buttonTest2');
+      buttonTest2.style.display = 'none';
+    }
+
+    // Funcion para ejecutar las pruebas
+    function runTests() {
+    currentTestCaseIndex = localStorage.getItem("currentTestCaseIndex");
+    const testCase = testCases[currentTestCaseIndex]; console.log(testCase)
+    const userCode = codeEditor.getValue();
+    const testName = testCase.functionName; console.log(testName)
+    let testedFunction;
+
+    document.getElementById('console').innerHTML = '';
+    console.log = function (message) {
+        var logMessage = document.createElement('div');
+        logMessage.innerHTML = message; // Usar innerHTML en lugar de textContent
+        document.getElementById('console').appendChild(logMessage);
+    };
+
+    console.originalLog = console.log;
+
+    try {
+        // Evaluar y definir la función en el ámbito global
+        eval(`
+                window.testedFunction = ${userCode}
+            `);
+
+        console.log("procesando...");
+		setTimeout(() => { console.log("Haciendo pruebas...") }, 3000);
+        setTimeout(() => { // retrasar la ejecución de la prueba por 5 segundos
+            describe(`Prueba para ${testCase.functionName}`, function () {
+                testCase.tests.forEach(test => {
+                    it(test.description, function () {
+                        try {
+                            // Acceder a la función desde el ámbito global
+                            const userFunction = window.testedFunction;
+
+                            test.assertions.forEach(assertion => {
+                                assertion(userFunction); // Pasar la función como argumento a las assertions
+                            });
+                        } catch (error) {
+                            throw new Error(`La prueba ha fallado: ${error.message}`);
+                        }
+                    });
+                });
+            });
+
+            // Ejecutar las pruebas una vez definidas
+            const runner = mocha.run();
+
+            // Mostrar los resultados en el elemento 'testResults'
+            runner.on('end', function () {
+                //const testResults = document.getElementById('testResults');
+                //testResults.innerHTML = '';
+                const stats = runner.stats;
+                const passes = stats.passes;
+                const failures = stats.failures;
+
+                if (failures === 0) {
+                    console.log("Excelente! 🎉 haz encontrado los tres errores en la función! continúa con la siguiente prueba");
+
+                    //testResults.innerText = `Pruebas pasadas: ${passes}, Pruebas fallidas: ${failures} ??` ;
+                    //testResults.style.backgroundColor = '#4CAF50';
+                    const mochastats = document.getElementById('mocha-stats');
+                    mochastats.style.backgroundColor = '#4CAF50';
+                    // Obtener el objeto 'resultados' del localStorage
+                    let resultados = JSON.parse(localStorage.getItem('resultados'));
+                    // Verificar si 'resultados' no existe o está vacío
+                    if (!resultados || Object.keys(resultados).length === 0) {
+                        // Si no existe o está vacío, crear un objeto con la primera prueba superada
+                        resultados = {
+                            [testName]: 'ok'
+                        };
+                    } else {
+                        // Si ya existe, agregar el resultado de la nueva prueba
+                        resultados[testName] = 'ok';
+                    }
+                    // Guardar el objeto 'resultados' en localStorage
+                    localStorage.setItem('resultados', JSON.stringify(resultados));
+                    currentTestCaseIndex++;
+                    localStorage.setItem("currentTestCaseIndex", currentTestCaseIndex);
+                    const retryButton = document.getElementById('retryButton');
+                    retryButton.style.display = 'none';
+                    const runTestsButton = document.querySelector('button[onclick="runTests()"]');
+                    runTestsButton.style.display = 'none';
+                    if (testCases.length > currentTestCaseIndex) {
+                        const buttonTest2 = document.getElementById('buttonTest2');
+                        buttonTest2.style.display = 'block';
+                        buttonTest2.textContent = testCases[currentTestCaseIndex - 1].functionResultExplain;
+                    } else {
+                        alert('pruebas terminadas')
+                    }
+
+
+                } else {
+                    console.log("Ejemplo de la ejecución esperada:");
+                    console.log("Pista: en la función hay 3 errores");
+
+                    //testResults.innerText = `Pruebas pasadas: ${passes}, Pruebas fallidas: ${failures}`;
+                    //testResults.style.backgroundColor = '#FFC107';
+                    //testResults.style.color = 'black';
+                    const mochastats = document.getElementById('mocha-stats');
+                    mochastats.style.backgroundColor = 'rgb(244, 207, 94)';
+                    const runTestsButton = document.querySelector('button[onclick="runTests()"]');
+                    runTestsButton.style.display = 'none';
+                    const retryButton = document.getElementById('retryButton');
+                    retryButton.style.display = 'block';
+                }
+
+            });
+
+            // }); // end foreach testCase
+        }, 5000); // esperar 5 segundos
+    } catch (error) {
+        const testResults = document.getElementById('testResults');
+        testResults.innerText = `Error al ejecutar las pruebas: ${error}`;
+    }
+}
+
+    function retryTests() {
+      location.reload();
+    }
+	
   </script>
 </body>
-
-</html>   
+</html>  
